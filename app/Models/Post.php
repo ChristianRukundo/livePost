@@ -13,4 +13,13 @@ class Post extends Model
         'body' => 'array'
     ];
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'post_id');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'post_user', 'post_id', 'user_id');
+    }
 }

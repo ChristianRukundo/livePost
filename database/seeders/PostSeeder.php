@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Post;
 use Database\Seeders\Traits\DisableForeignKeys;
 use Database\Seeders\Traits\TruncateTable;
-use GuzzleHttp\Promise\Create;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class PostSeeder extends Seeder
@@ -16,13 +14,12 @@ class PostSeeder extends Seeder
      *
      * @return void
      */
-    use TruncateTable , DisableForeignKeys;
+    use TruncateTable, DisableForeignKeys;
     public function run()
     {
         $this->DisableForeignKeys();
-        $posts = User::factory(5)->create();
         $this->truncate('posts');
+        $posts = Post::factory(10)->untitled()->create();
         $this->EnableForeignKeys();
-
     }
 }
