@@ -23,9 +23,6 @@ class UserSeeder extends Seeder
         $this->truncate('users');
         $users = User::factory(10)->create();
         $this->EnableForeignKeys();
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
     }
 }
