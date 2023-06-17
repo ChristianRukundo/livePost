@@ -25,6 +25,7 @@ class CustomersController extends Controller
      *
      * @param  \Illuminate\Http\StoreCustomerRequest  $request
      *
+
      */
 
     public function store(Request $request)
