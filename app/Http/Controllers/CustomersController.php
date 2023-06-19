@@ -17,7 +17,7 @@ class CustomersController extends Controller
     public function index()
     {
         $customers = Customers::all();
-        
+
         return view('customer-list')->with('customers', $customers);
     }
 
@@ -34,6 +34,7 @@ class CustomersController extends Controller
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('uploads', 'public');
             $imgUrl = Storage::url($imagePath);
+            
         } else {
             $imgUrl = null;
         }
